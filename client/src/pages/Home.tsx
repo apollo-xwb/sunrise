@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChefHat, MapPin, Phone, Clock, Facebook, Instagram } from "lucide-react";
 import { Link } from "wouter";
+import { LOGO_SRC } from "@/assets";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-display font-bold text-2xl text-primary hover:text-primary/80 transition-colors">
-            <img src="/manus-storage/sunrise-logo_d41c0ee8.png" alt="Sunrise Chip 'n Ranch" className="h-10 w-auto" />
+            <img src={LOGO_SRC} alt="Sunrise Chip 'n Ranch" className="h-10 w-auto" />
             <span className="hidden sm:inline">Sunrise</span>
           </Link>
           <div className="flex items-center gap-6">
@@ -30,7 +31,7 @@ export default function Home() {
             <div className="flex flex-col items-center md:items-start gap-8">
               <div className="w-full max-w-sm">
                 <img 
-                  src="/manus-storage/sunrise-logo_d41c0ee8.png" 
+                  src={LOGO_SRC}
                   alt="Sunrise Chip 'n Ranch Logo" 
                   className="w-full h-auto drop-shadow-lg"
                 />
@@ -180,11 +181,11 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <a href="/menu" className="inline-block">
+            <Link href="/menu" className="inline-block">
               <button className="px-8 py-3 bg-primary hover:bg-primary/90 text-white font-semibold rounded-md transition-colors">
                 View Full Menu
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

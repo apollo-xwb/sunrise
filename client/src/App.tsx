@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Router, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,7 +10,7 @@ import Story from "./pages/Story";
 import Locations from "./pages/Locations";
 import Contact from "./pages/Contact";
 
-function Router() {
+function AppRouter() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
@@ -31,6 +31,8 @@ function Router() {
 //   to keep consistent foreground/background color across components
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 function App() {
   return (
     <ErrorBoundary>
@@ -40,7 +42,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <Router base={routerBase}>
+            <AppRouter />
+          </Router>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

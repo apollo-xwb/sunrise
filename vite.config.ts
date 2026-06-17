@@ -152,7 +152,10 @@ function vitePluginManusDebugCollector(): Plugin {
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
+const pagesBase = process.env.GITHUB_PAGES === "true" ? "/sunrise/" : "/";
+
 export default defineConfig({
+  base: pagesBase,
   plugins,
   resolve: {
     alias: {

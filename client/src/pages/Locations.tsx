@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowLeft, MapPin, Phone, Clock } from "lucide-react";
+import { LOGO_SRC } from "@/assets";
 
 export default function Locations() {
   return (
@@ -10,7 +11,7 @@ export default function Locations() {
         <div className="container max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
             <a className="flex items-center gap-2 font-display font-bold text-2xl text-primary hover:text-primary/80 transition-colors">
-              <img src="/manus-storage/sunrise-logo_d41c0ee8.png" alt="Sunrise Chip 'n Ranch" className="h-10 w-auto" />
+              <img src={LOGO_SRC} alt="Sunrise Chip 'n Ranch" className="h-10 w-auto" />
               <span className="hidden sm:inline">Sunrise</span>
             </a>
           </Link>
